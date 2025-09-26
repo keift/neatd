@@ -9,6 +9,7 @@ sudo tee /usr/local/bin/$SERVICE_NAME.sh > /dev/null << EOF
   dnf install -y curl
   yum install -y curl
   pacman -S --noconfirm curl
+  zypper install -y curl
 
   curl -fsSL https://raw.githubusercontent.com/keift/neatd/refs/heads/main/src/main.sh | sh
 EOF
