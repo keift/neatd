@@ -14,7 +14,8 @@ zypper -n install -f systemd coreutils util-linux logrotate
 
 pacman -S --noconfirm systemd coreutils util-linux logrotate
 
-DEBIAN_FRONTEND="noninteractive"
+export DEBIAN_FRONTEND="noninteractive"
+
 apt update -o Dpkg::Options::="--force-confold" -y
 apt upgrade -o Dpkg::Options::="--force-confold" -y
 apt autoremove -y
