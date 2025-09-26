@@ -11,8 +11,9 @@ yum reinstall -y coreutils util-linux
 
 pacman -S --noconfirm coreutils util-linux
 
-apt update -y
-apt upgrade -y
+DEBIAN_FRONTEND=noninteractive
+apt update -o Dpkg::Options::="--force-confold" -y
+apt upgrade -o Dpkg::Options::="--force-confold" -y
 apt autoremove -y
 
 dnf check-update -y
