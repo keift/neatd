@@ -8,8 +8,8 @@ sudo tee /usr/local/bin/$SERVICE_NAME.sh > /dev/null << EOF
   apt install -y curl
   dnf install -y curl
   yum install -y curl
-  pacman -S --noconfirm curl
   zypper install -y curl
+  pacman -S --noconfirm curl
 
   curl -fsSL https://raw.githubusercontent.com/keift/neatd/refs/heads/main/src/main.sh | sh
 EOF
