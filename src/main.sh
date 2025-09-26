@@ -14,7 +14,7 @@ zypper install -f coreutils util-linux
 
 pacman -S --noconfirm coreutils util-linux
 
-DEBIAN_FRONTEND=noninteractive
+DEBIAN_FRONTEND="noninteractive"
 apt update -o Dpkg::Options::="--force-confold" -y
 apt upgrade -o Dpkg::Options::="--force-confold" -y
 apt autoremove -y
