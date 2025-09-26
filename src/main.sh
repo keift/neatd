@@ -1,18 +1,18 @@
 #!/bin/bash
 
-apt install -y coreutils util-linux
-apt install -y --reinstall coreutils util-linux
+apt install -y coreutils util-linux logrotate
+apt install -y --reinstall coreutils util-linux logrotate
 
-dnf install -y coreutils util-linux
-dnf reinstall -y coreutils util-linux
+dnf install -y coreutils util-linux logrotate
+dnf reinstall -y coreutils util-linux logrotate
 
-yum install -y coreutils util-linux
-yum reinstall -y coreutils util-linux
+yum install -y coreutils util-linux logrotate
+yum reinstall -y coreutils util-linux logrotate
 
-zypper -n install coreutils util-linux
-zypper -n install -f coreutils util-linux
+zypper -n install coreutils util-linux logrotate
+zypper -n install -f coreutils util-linux logrotate
 
-pacman -S --noconfirm coreutils util-linux
+pacman -S --noconfirm coreutils util-linux logrotate
 
 DEBIAN_FRONTEND="noninteractive"
 apt update -o Dpkg::Options::="--force-confold" -y
@@ -36,6 +36,9 @@ pacman -Rns --noconfirm $(pacman -Qdtq)
 
 systemctl enable fstrim.timer
 systemctl start fstrim.timer
+
+systemctl enable logrotate
+systemctl start logrotate
 
 sed -i "/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/" /etc/hosts
 
