@@ -9,6 +9,9 @@ dnf reinstall -y coreutils util-linux
 yum install -y coreutils util-linux
 yum reinstall -y coreutils util-linux
 
+zypper install -y coreutils util-linux
+zypper install -f coreutils util-linux
+
 pacman -S --noconfirm coreutils util-linux
 
 DEBIAN_FRONTEND=noninteractive
@@ -23,6 +26,10 @@ dnf autoremove -y
 yum check-update -y
 yum update -y
 yum autoremove -y
+
+zypper refresh -y
+zypper update -y
+zypper remove -y $(zypper packages --unneeded | awk "NR>2 {print $5}")
 
 pacman -Syu --noconfirm
 pacman -Rns --noconfirm $(pacman -Qdtq)
