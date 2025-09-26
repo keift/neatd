@@ -33,3 +33,6 @@ zypper remove -y $(zypper packages --unneeded | awk "NR>2 {print $5}")
 
 pacman -Syu --noconfirm
 pacman -Rns --noconfirm $(pacman -Qdtq)
+
+systemctl enable fstrim.timer
+systemctl start fstrim.timer
