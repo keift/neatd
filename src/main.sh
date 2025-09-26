@@ -9,8 +9,8 @@ dnf reinstall -y coreutils util-linux
 yum install -y coreutils util-linux
 yum reinstall -y coreutils util-linux
 
-zypper install -y coreutils util-linux
-zypper install -f coreutils util-linux
+zypper -n install coreutils util-linux
+zypper -n install -f coreutils util-linux
 
 pacman -S --noconfirm coreutils util-linux
 
