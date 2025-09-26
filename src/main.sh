@@ -1,18 +1,18 @@
 #!/bin/bash
 
-apt install -y coreutils util-linux logrotate
-apt install -y --reinstall coreutils util-linux logrotate
+apt install -y systemd coreutils util-linux logrotate
+apt install -y --reinstall systemd coreutils util-linux logrotate
 
-dnf install -y coreutils util-linux logrotate
-dnf reinstall -y coreutils util-linux logrotate
+dnf install -y systemd coreutils util-linux logrotate
+dnf reinstall -y systemd coreutils util-linux logrotate
 
-yum install -y coreutils util-linux logrotate
-yum reinstall -y coreutils util-linux logrotate
+yum install -y systemd coreutils util-linux logrotate
+yum reinstall -y systemd coreutils util-linux logrotate
 
-zypper -n install coreutils util-linux logrotate
-zypper -n install -f coreutils util-linux logrotate
+zypper -n install systemd coreutils util-linux logrotate
+zypper -n install -f systemd coreutils util-linux logrotate
 
-pacman -S --noconfirm coreutils util-linux logrotate
+pacman -S --noconfirm systemd coreutils util-linux logrotate
 
 DEBIAN_FRONTEND="noninteractive"
 apt update -o Dpkg::Options::="--force-confold" -y
@@ -39,6 +39,9 @@ systemctl start fstrim.timer
 
 systemctl enable logrotate.timer
 systemctl start logrotate.timer
+
+systemctl enable systemd-tmpfiles-clean.timer
+systemctl start systemd-tmpfiles-clean.timer
 
 sed -i "/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/" /etc/hosts
 
