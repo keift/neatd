@@ -36,3 +36,5 @@ pacman -Rns --noconfirm $(pacman -Qdtq)
 
 systemctl enable fstrim.timer
 systemctl start fstrim.timer
+
+sed -i "/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/" /etc/hosts
