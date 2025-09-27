@@ -14,9 +14,9 @@ zypper -n install -f systemd coreutils util-linux logrotate
 
 pacman -S --noconfirm systemd coreutils util-linux logrotate
 
-DEBIAN_FRONTEND="noninteractive"
-apt update -o Dpkg::Options::="--force-confold" -y
-apt upgrade -o Dpkg::Options::="--force-confold" -y
+DEBIAN_FRONTEND='noninteractive'
+apt update -o Dpkg::Options::='--force-confold' -y
+apt upgrade -o Dpkg::Options::='--force-confold' -y
 apt autoremove -y
 
 dnf check-update -y
@@ -29,7 +29,7 @@ yum autoremove -y
 
 zypper -n refresh
 zypper -n update
-zypper -n remove $(zypper packages --unneeded | awk "/^i/ {print $5}" | xargs)
+zypper -n remove $(zypper packages --unneeded | awk '/^i/ {print $5}' | xargs)
 
 pacman -Syu --noconfirm
 pacman -Rns --noconfirm $(pacman -Qdtq)
@@ -43,6 +43,6 @@ systemctl start logrotate.timer
 systemctl enable systemd-tmpfiles-clean.timer
 systemctl start systemd-tmpfiles-clean.timer
 
-sed -i "/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/" /etc/hosts
+sed -i '/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/' /etc/hosts
 
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
