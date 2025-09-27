@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE_NAME='neatd'
+SERVICE_NAME="neatd"
 
 sudo rm -rf /usr/local/bin/$SERVICE_NAME.sh
 
