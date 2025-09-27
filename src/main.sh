@@ -14,9 +14,16 @@ zypper -n install -f systemd coreutils util-linux logrotate
 
 pacman -S --noconfirm systemd coreutils util-linux logrotate
 
+<<<<<<< HEAD
 DEBIAN_FRONTEND='noninteractive'
 apt update -o Dpkg::Options::='--force-confold' -y
 apt upgrade -o Dpkg::Options::='--force-confold' -y
+=======
+export DEBIAN_FRONTEND="noninteractive"
+
+apt update -o Dpkg::Options::="--force-confold" -y
+apt upgrade -o Dpkg::Options::="--force-confold" -y
+>>>>>>> 85143006ee71ce1d1a5698e194be01c5a9154f26
 apt autoremove -y
 
 dnf check-update -y
@@ -46,3 +53,5 @@ systemctl start systemd-tmpfiles-clean.timer
 sed -i '/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/' /etc/hosts
 
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+echo "Neatd worked successfully."
