@@ -47,3 +47,5 @@ systemctl start systemd-tmpfiles-clean.timer
 sed -i "/^127\.0\.1\.1\s\+/s/\S\+$/$(hostname)/" /etc/hosts
 
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+
+echo "Neatd worked successfully."
