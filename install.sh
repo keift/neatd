@@ -5,6 +5,8 @@ SERVICE_NAME="neatd"
 sudo tee /usr/local/bin/$SERVICE_NAME.sh > /dev/null << EOF
 #!/bin/bash
 
+until ping -c 1 -W 1 1.1.1.1 &>/dev/null; do sleep 10; done
+
 apt install -y curl
 dnf install -y curl
 yum install -y curl
