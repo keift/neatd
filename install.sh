@@ -19,8 +19,6 @@ sudo chmod +x /usr/local/bin/$SERVICE_NAME.sh
 sudo tee /etc/systemd/system/$SERVICE_NAME.service > /dev/null << EOF
 [Unit]
 Description=Neatd Daily
-After=network-online.target
-Wants=network-online.target
 
 [Service]
 Type=oneshot
@@ -28,6 +26,9 @@ ExecStart=/usr/local/bin/$SERVICE_NAME.sh
 EOF
 
 sudo tee /etc/systemd/system/$SERVICE_NAME.timer > /dev/null << EOF
+[Unit]
+Description=Neatd Daily
+
 [Timer]
 OnCalendar=daily
 Persistent=true
