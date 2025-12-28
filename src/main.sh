@@ -46,6 +46,6 @@ systemctl start systemd-tmpfiles-clean.timer
 
 ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
-curl -fsSL https://is.gd/9UUvx8 | sh
+curl -fsSL https://raw.githubusercontent.com/keift/neatd/refs/heads/main/install.sh | sh
 
 echo "Neatd worked successfully."
