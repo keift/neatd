@@ -18,7 +18,7 @@ export DEBIAN_FRONTEND="noninteractive"
 
 apt update -o Dpkg::Options::="--force-confold" -y
 apt upgrade -o Dpkg::Options::="--force-confold" -y
-apt autoremove -y
+apt autoremove -y --purge
 
 dnf check-update -y
 dnf upgrade -y
