@@ -24,6 +24,7 @@ Description=Neatd Daily
 
 [Service]
 Type=oneshot
+User=root
 ExecStart=/usr/local/bin/$SERVICE_NAME.sh
 EOF
 
