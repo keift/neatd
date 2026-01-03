@@ -12,7 +12,7 @@ yum reinstall -y systemd coreutils util-linux logrotate
 zypper -n install systemd coreutils util-linux logrotate
 zypper -n install -f systemd coreutils util-linux logrotate
 
-pacman -S --noconfirm systemd coreutils util-linux logrotate
+pacman -S --noconfirm --overwrite "*" systemd coreutils util-linux logrotate
 
 export DEBIAN_FRONTEND="noninteractive"
 
@@ -20,12 +20,10 @@ apt update -o Dpkg::Options::="--force-confold" -y
 apt upgrade -o Dpkg::Options::="--force-confold" -y
 apt autoremove -y --purge
 
-dnf check-update -y
 dnf upgrade -y
 dnf autoremove -y
 
-yum check-update -y
-yum update -y
+yum upgrade -y
 yum autoremove -y
 
 zypper -n refresh
