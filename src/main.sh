@@ -28,7 +28,7 @@ yum autoremove -y
 
 zypper -n refresh
 zypper -n update
-zypper -n remove $(zypper packages --unneeded | awk "/^i/ {print $5}" | xargs)
+zypper -n remove $(zypper packages --unneeded | awk "/^i/ {print $5}")
 
 pacman -Syu --noconfirm
 pacman -Rns --noconfirm $(pacman -Qdtq)
