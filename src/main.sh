@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 apt install -y systemd coreutils util-linux logrotate
 apt install -y --reinstall systemd coreutils util-linux logrotate
 

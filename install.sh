@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -e
+
+sudo -v
+
 SERVICE_NAME="neatd"
 
 sudo tee /usr/local/bin/$SERVICE_NAME.sh > /dev/null << EOF
