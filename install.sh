@@ -6,7 +6,7 @@ sudo -v
 
 SERVICE_NAME="neatd"
 
-sudo tee /usr/local/bin/$SERVICE_NAME.sh > /dev/null << EOF
+sudo tee /usr/local/bin/$SERVICE_NAME.sh &>/dev/null << EOF
 #!/bin/bash
 
 until ping -c 1 -W 1 1.1.1.1 &>/dev/null; do sleep 10; done
@@ -22,7 +22,7 @@ EOF
 
 sudo chmod +x /usr/local/bin/$SERVICE_NAME.sh
 
-sudo tee /etc/systemd/system/$SERVICE_NAME.service > /dev/null << EOF
+sudo tee /etc/systemd/system/$SERVICE_NAME.service &>/dev/null << EOF
 [Unit]
 Description=Neatd Daily
 
@@ -32,7 +32,7 @@ User=root
 ExecStart=/usr/local/bin/$SERVICE_NAME.sh
 EOF
 
-sudo tee /etc/systemd/system/$SERVICE_NAME.timer > /dev/null << EOF
+sudo tee /etc/systemd/system/$SERVICE_NAME.timer &>/dev/null << EOF
 [Unit]
 Description=Neatd Daily
 
