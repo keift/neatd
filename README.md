@@ -1,7 +1,5 @@
 # Neatd
 
-## About
-
 Run the steps that best suit your Linux at regular intervals.
 
 ## Features
