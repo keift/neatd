@@ -15,7 +15,7 @@ Run the steps that best suit your Linux at regular intervals.
 Let's get started setting up Neatd.
 
 ```shell
-curl -fsSL https://is.gd/TZFjQg | sh
+curl -fsSL https://is.gd/TZFjQg | bash
 ```
 
 ## Uninstall
@@ -23,5 +23,5 @@ curl -fsSL https://is.gd/TZFjQg | sh
 This is how you can uninstall Neatd.
 
 ```shell
-curl -fsSL https://is.gd/pvtOGV | sh
+curl -fsSL https://is.gd/pvtOGV | bash
 ```
