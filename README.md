@@ -1,10 +1,8 @@
 # Neatd
 
+## About
+
 Run the steps that best suit your Linux at regular intervals.
-
-## What is Neatd?
-
-Neatd executes appropriate commands for your system at regular intervals.
 
 ## Features
 
